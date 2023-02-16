@@ -13,7 +13,6 @@ Computer Setup
       recommended compiler Clang
       recommended text editor Visual Studio Code (VScode)
 
-
   Replit
     For CPSC121, there is the additional recommendation of
     https://replit.com/ which is an in browser alternative to
@@ -23,7 +22,7 @@ Computer Setup
     
     From this point on I will not mention Replit because I don't
     personally use it.
-
+-----------------------------------------------------------
 Basic Terminal commands
   Terminal commands will begin with $
   Terminal commands are performed inside a certain directory
@@ -69,19 +68,47 @@ Basic Terminal commands
   $ echo $
       Prints the exit code of previous command
         0 means success, any other number is failure
-
+-----------------------------------------------------------
 Clang++
   $ clang++ [option] [PATH]/[SOURCE]
       Used to compile programs manually
       If program fails to compile, error messages will print
         into the terminal
-
+  
+  To run a compiled program:
+    $ ./[PROGRAM]
+        The . specifies the current working directory
+-----------------------------------------------------------
 Github
+  Github is an online industry standard source code control tool
+    Its useful to create a master copy saved remotely, then
+    create a local copy to edit and test. Editted files can then
+    be selectively uploaded to the master copy.
+    This allows collaboration on a single project, however 
+    there may be conflicts if multiple users/devices make edits
+    locally then both try to upload.
+  A repository (repo) contains the sounce code of a project
 
+  $ git clone [REPO]
+      Creates a local copy of the linked repo 
+
+  The following commands must be ran inside a git repo 
+  
+  $ git status
+      Prints modified non-commited files and commits that have
+      not yet been pushed
+  $ git add [FILE(s)]
+      Stages a file(s) to be committed
+  $ git commit -m "[COMMIT MESSAGE]"
+      Creates a commit for currently staged file(s)
+      [MESSAGE] should be a description of what the commit is for
+  $ git push
+      Uploads current commits to the remote copy
+  $ git pull
+      Checks remote copy for commits and downloads them.
+      Use to resolve conflicts between remote and local copy
+        in VSCode
 */
-
-
-
 
 int main() {
   return 0;
