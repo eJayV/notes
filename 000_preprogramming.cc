@@ -81,6 +81,7 @@ Clang++
         into the terminal
   $ clang++ std=c++17 [FILE(s)] -o [PROGRAM]
       Compiles the file(s) into a program
+      If -o [PROGRAM] is excluded, the default program is a.out
 
   $ clang-format -i -style=google -Werror [FILE(s)]
       Formats code of the files automatically
