@@ -1,13 +1,13 @@
 /* Created: Feb 16, 2023
    Updated: Feb 16, 2023
-
+-----------------------------------------------------------
 Computer Setup
   Ubuntu
     For the CSUF CPSC120 course it is recommended use
     Ubuntu 20.04 (can be found here: https://bit.ly/3x4Mrpn )
     and run the following command in terminal to download the
     needed/recommended tools/programs/files/etc for the course:
-    $wget -q https://raw.githubusercontent.com/mshafae/tusk/main/quickinstall.sh -O- | sh
+    $wget -q https://raw.githubusercontent.com/mshafae/tusk/main/quickinstall.sh-O- | sh
 
     Notably installed by the command is the:
       recommended compiler Clang
@@ -19,7 +19,7 @@ Computer Setup
     using VScode, Clang, and some terminal.
     The upsides of Replit is it can be accessed from most
     browsers from most devices.
-    
+
     From this point on I will not mention Replit because I don't
     personally use it.
 -----------------------------------------------------------
@@ -27,7 +27,7 @@ Basic Terminal commands
   Terminal commands will begin with $
   Terminal commands are performed inside a certain directory
   (folder) so you must be able to navigate between them.
-  
+
   $ pwd
       Print working directory (folder)
 
@@ -43,7 +43,7 @@ Basic Terminal commands
   $ cd ..
       Navigates to parent directory
   $ cd -
-      Navigates to previous directory 
+      Navigates to previous directory
   $ cd [PATH]
       Navigate through multiple directories by using a / between
       each directory. Examples:
@@ -56,7 +56,7 @@ Basic Terminal commands
       Makes an empty directory at the location of the path, ex:
         $ mkdir X/Y/Z/example\
       [PATH] may be excluded if it is already the terminal's location
-  
+
   $ rmdir [PATH]/[DIRECTORY]
     Deletes directory if it is empty
   $ rm [OPTION...] FILE...
@@ -68,13 +68,23 @@ Basic Terminal commands
   $ echo $
       Prints the exit code of previous command
         0 means success, any other number is failure
+
+  $ cat [FILE]
+      Displays text file in terminal
+  $ touch [FILE]
+      Creates a text file
 -----------------------------------------------------------
 Clang++
-  $ clang++ [option] [PATH]/[SOURCE]
+  $ clang++ [option] [SOURCE]
       Used to compile programs manually
       If program fails to compile, error messages will print
         into the terminal
-  
+  $ clang++ std=c++17 [FILE(s)] -o [PROGRAM]
+      Compiles the file(s) into a program
+
+  $ clang-format -i -style=google -Werror [FILE(s)]
+      Formats code of the files automatically
+
   To run a compiled program:
     $ ./[PROGRAM]
         The . specifies the current working directory
@@ -84,16 +94,16 @@ Github
     Its useful to create a master copy saved remotely, then
     create a local copy to edit and test. Editted files can then
     be selectively uploaded to the master copy.
-    This allows collaboration on a single project, however 
+    This allows collaboration on a single project, however
     there may be conflicts if multiple users/devices make edits
     locally then both try to upload.
   A repository (repo) contains the sounce code of a project
 
   $ git clone [REPO]
-      Creates a local copy of the linked repo 
+      Creates a local copy of the linked repo
 
-  The following commands must be ran inside a git repo 
-  
+  The following commands must be ran inside a git repo
+
   $ git status
       Prints modified non-commited files and commits that have
       not yet been pushed
@@ -102,14 +112,17 @@ Github
   $ git commit -m "[COMMIT MESSAGE]"
       Creates a commit for currently staged file(s)
       [MESSAGE] should be a description of what the commit is for
+  $ git commit -a -m "[COMMIT MESSAGE]"
+      Stages and commits all changes
   $ git push
       Uploads current commits to the remote copy
   $ git pull
       Checks remote copy for commits and downloads them.
       Use to resolve conflicts between remote and local copy
         in VSCode
+-----------------------------------------------------------
+*Sometimes [SOURCE] or [SOURCE] may be interchangable with
+  [PATH]/[FILE]
 */
 
-int main() {
-  return 0;
-}
+int main() { return 0; }
